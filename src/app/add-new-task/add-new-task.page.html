@@ -1,0 +1,34 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar >
+    <ion-title>Add new task</ion-title>
+    <ion-icon name="close" slot="end" size="large" class="ion-padding" (click)="dismis()"></ion-icon>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-align-self-center" >
+    <ion-item>
+      <ion-textarea [(ngModel)]="itemName"  placeholder="Write task here"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+      <ion-label >Priority</ion-label>
+      <ion-select [(ngModel)]="itemPriority">
+        <ion-select-option value="Low">Low</ion-select-option>
+        <ion-select-option value="Middle">Middle</ion-select-option>
+        <ion-select-option value="High" selected>High</ion-select-option>
+        </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-icon name="calendar-outline"slot="start"></ion-icon>
+    <ion-label >Due Date </ion-label>
+    <ion-datetime [(ngModel)]="itemDueDate"  displayFormat="D MMM YYYY H:mm"></ion-datetime>
+  </ion-item>
+
+
+  <ion-button class="ion-margin" expand="block" (click)="add()">Add Task</ion-button>
+
+  </ion-card>
+</ion-content>
